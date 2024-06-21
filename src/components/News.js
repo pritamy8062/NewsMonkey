@@ -16,7 +16,7 @@ const News = (props) => {
 
   const updateNews = async () => {
     props.setProgress(10);
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
+    const url = `https://gnews.io/api/v4/top-headlines?country=${props.country}&category=${props.category}&token=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
 
     try {
       setLoading(true);
@@ -66,9 +66,9 @@ const News = (props) => {
                 <NewsItem
                   title={element.title ? element.title : ""}
                   description={element.description ? element.description : ""}
-                  imageUrl={element.urlToImage}
+                  imageUrl={element.image}
                   newsUrl={element.url}
-                  author={element.author}
+                  author={element.source.name}
                   date={element.publishedAt}
                   source={element.source.name}
                 />
@@ -103,7 +103,7 @@ const News = (props) => {
 };
 
 News.defaultProps = {
-  country: "in",
+  country: "us",
   pageSize: 8,
   category: "general",
 };
