@@ -5,7 +5,6 @@ import NavBar from './components/NavBar';
 import News from './components/News';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
-require('dotenv').config();// Importing dotenv to load environment variables
 
 const App = ()=> {
   const pageSize = 6;// Setting the number of news items per page
@@ -14,11 +13,6 @@ const App = ()=> {
   
     return (
       <div>
-      <div
-      onClick={()=>{
-        console.log(apiKey)
-      }}
-      >hello</div>
         <Router>
         <NavBar/> 
         <LoadingBar
