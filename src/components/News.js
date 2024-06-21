@@ -45,7 +45,7 @@ const News = (props)=>{
     const handleNextClick = async () => {
         setPage(page + 1);// Incrementing the page number
     }
- 
+ console.log(articles);
         return (
             <>
                 <h1 className="text-center" style={{ margin: '35px 0px', marginTop: '90px' }}>NewsMonkey - Top {capitalizeFirstLetter(props.category)} Headlines</h1>
