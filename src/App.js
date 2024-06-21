@@ -5,14 +5,20 @@ import NavBar from './components/NavBar';
 import News from './components/News';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
+require('dotenv').config();// Importing dotenv to load environment variables
 
 const App = ()=> {
-  const pageSize = 6;// Setting the number of news items per page
+  const pageSize = 6;// Getting the API key from environment variables
   const apiKey = process.env.REACT_APP_NEWS_API_KEY;// Getting the API key from environment variables
   const [progress, setProgress] = useState(0)// useState hook to manage the progress state
   
     return (
       <div>
+      <div
+      onClick={()=>{
+        console.log(apiKey)
+      }}
+      >hello</div>
         <Router>
         <NavBar/> 
         <LoadingBar

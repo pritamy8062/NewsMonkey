@@ -13,7 +13,7 @@ const News = (props)=>{
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     } 
-
+    
     // Function to fetch news data from the API and update state
     const updateNews = async ()=> {
         props.setProgress(10);
@@ -26,21 +26,21 @@ const News = (props)=>{
         setArticles(parsedData.articles)// Updating articles state
         setTotalResults(parsedData.totalResults)// Updating totalResults state
         setLoading(false)
+        setLoading(false)
         props.setProgress(100);
     }
-
-    // useEffect hook to update news whenever the component mounts or page changes
+ // useEffect hook to update news whenever the component mounts or page changes
     useEffect(() => {
         document.title = `${capitalizeFirstLetter(props.category)} - NewsMonkey`;
         updateNews(); 
         // eslint-disable-next-line
     }, [page])
-
+   
     // Function to handle clicking the "Previous" button
     const handlePreviousClick = async () => {
         setPage(page - 1);// Decrementing the page number
     }
-
+    
     // Function to handle clicking the "Next" button
     const handleNextClick = async () => {
         setPage(page + 1);// Incrementing the page number
@@ -49,7 +49,7 @@ const News = (props)=>{
         return (
             <>
                 <h1 className="text-center" style={{ margin: '35px 0px', marginTop: '90px' }}>NewsMonkey - Top {capitalizeFirstLetter(props.category)} Headlines</h1>
-                {loading && <Spinner />} {/* Displaying spinner if loading */}
+                {loading && <Spinner />}{/* Displaying spinner if loading */}
                     <div className="container">
                          
                     <div className="row">
