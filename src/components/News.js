@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
 import PropTypes from "prop-types";
+import axios from "axios";
 
 const News = (props) => {
   // State variables to manage articles, loading state, current page, and total results
