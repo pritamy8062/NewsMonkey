@@ -24,8 +24,7 @@ const News = (props) => {
     let data = await fetch(url); // Fetching data from the API
     props.setProgress(30);
     let parsedData = await data.json();
-    axios
-      .get(
+    axios.get(
         `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`
       )
       .then((response) => console.log(response.data))
