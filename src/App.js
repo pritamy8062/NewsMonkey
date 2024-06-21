@@ -9,7 +9,7 @@ require('dotenv').config();// Importing dotenv to load environment variables
 
 const App = ()=> {
   const pageSize = 6;// Getting the API key from environment variables
-  const apiKey = process.env.REACT_APP_NEWS_API_KEY;// Getting the API key from environment variables
+  const apiKey = "e21a2b13f7a5489381c5745dc238790a";// Getting the API key from environment variables
   const [progress, setProgress] = useState(0)// useState hook to manage the progress state
   
     return (

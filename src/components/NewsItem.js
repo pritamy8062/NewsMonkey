@@ -3,6 +3,7 @@ import React from 'react'
 const NewsItem = (props)=> {
         // Destructuring props to extract necessary values
         let { title, description, imageUrl, newsUrl, author, date, source } = props;
+      
         return (
             <div className="my-3">
                 <div className="card">
